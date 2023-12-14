@@ -28,6 +28,7 @@ class Vectorizer():
         
     def vector(self, split_docs: list, ) -> bool:
         self.logger.info('docs: %s', len(split_docs))
+        # Using OpenAIEmbeddings models to provide further correlational data for our resulting vector for better semantic relationship identification
         vector_index = FAISS.from_documents(split_docs, self.embeddings)
         self.logger.info('Vector embedding created')
         
